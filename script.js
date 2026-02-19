@@ -9,7 +9,16 @@ const mobileNav = document.querySelector(".mobile-nav");
 const mobileLinks = mobileNav.querySelectorAll("a");
 
 const updateActiveLink = (currentId) => {
-  [...navLinks, ...mobileLinks].forEach((link) => {
+  // Para desktop: active en .nav-dot
+  document.querySelectorAll(".nav-dot").forEach((dot) => {
+    const link = dot.querySelector(".nav-link");
+    dot.classList.toggle(
+      "active",
+      link.getAttribute("href") === `#${currentId}`,
+    );
+  });
+  // Para mobile: active en los <a>
+  mobileLinks.forEach((link) => {
     link.classList.toggle(
       "active",
       link.getAttribute("href") === `#${currentId}`,
