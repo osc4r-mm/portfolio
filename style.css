@@ -121,10 +121,12 @@ body {
 
 .nav-dot a {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
+  top: -15px;
+  left: -30px;
+  width: 160px;
+  height: 40px;
+  z-index: 10;
+  cursor: pointer;
 }
 
 /* Tooltip con nombre de sección */
