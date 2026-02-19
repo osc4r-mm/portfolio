@@ -546,49 +546,62 @@ header p {
 
 /* ============================================================
    SECCIÓN: TRAYECTORIA
-   Pestañas (Experiencia / Educación / Certificaciones) + timeline.
+   Dos columnas: experiencia IT a la izquierda,
+   formación + certificaciones a la derecha.
+   Todo visible sin pestañas ni clics.
 ============================================================ */
 
-/* Selector de pestañas */
-.exp-tabs {
+/* Grid de dos columnas */
+.trayectoria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Etiqueta de sub-grupo — separador visual prominente */
+.tray-group-label {
   display: flex;
-  gap: 0;
-  margin-bottom: 40px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
-  padding: 4px;
-  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  position: relative;
 }
 
-.exp-tab {
-  padding: 10px 26px;
-  border-radius: 9px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s;
-  color: var(--text-muted);
-  background: transparent;
-  border: none;
-  font-family: "Lexend", sans-serif;
-}
-
-.exp-tab.active {
+/* Icono dentro de un chip con gradiente */
+.tray-label-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   background: linear-gradient(
     135deg,
     var(--accent-primary),
     var(--accent-secondary)
   );
-  color: white;
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
 }
 
-/* Paneles de pestaña */
-.tab-panel {
-  display: none;
+/* Texto del separador */
+.tray-label-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
 }
-.tab-panel.active {
-  display: block;
+
+/* Línea decorativa que se extiende hasta el borde */
+.tray-group-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.4), transparent);
+  border-radius: 2px;
 }
 
 /* Timeline vertical */
@@ -880,7 +893,8 @@ footer {
 
   /* Grids a una columna */
   .about-grid,
-  .contact-grid {
+  .contact-grid,
+  .trayectoria-grid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
