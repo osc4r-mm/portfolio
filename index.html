@@ -1,20 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Oscar Martin Morales · Desarrollador Web</title>
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&family=Lexend:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- NAVEGACIÓN  (escritorio) -->
     <div class="nav-trigger"></div>
-
     <nav class="side-nav">
       <div class="nav-dot">
         <a href="#inicio" class="nav-link active" data-section="Inicio"></a>
@@ -26,70 +30,562 @@
         <a href="#proyectos" class="nav-link" data-section="Proyectos"></a>
       </div>
       <div class="nav-dot">
+        <a href="#experiencia" class="nav-link" data-section="Experiencia"></a>
+      </div>
+      <div class="nav-dot">
         <a href="#contacto" class="nav-link" data-section="Contacto"></a>
       </div>
     </nav>
 
+    <!-- NAVEGACIÓN (móvil) -->
     <nav class="mobile-nav hidden">
       <a href="#inicio" class="active"></a>
       <a href="#sobre-mi"></a>
       <a href="#proyectos"></a>
+      <a href="#experiencia"></a>
       <a href="#contacto"></a>
     </nav>
 
+    <!-- CABECERA -->
     <header id="inicio">
       <div class="container">
-        <h2>Bienvenido a mi Portfolio</h2>
+        <span class="hero-tag">📍 Navàs, Cataluña</span>
+        <h1>Oscar Martin<br />Morales</h1>
         <p>
-          Diseño moderno con navegación lateral intuitiva y acentos vibrantes
-          para una experiencia visual impactante
+          Desarrollador Web Junior Full Stack · Apasionado por crear interfaces
+          accesibles, código limpio y soluciones que funcionan de verdad.
         </p>
+
+        <!-- Chips de tecnologías principales -->
+        <div class="hero-pills">
+          <span class="pill">JavaScript</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">React</span>
+          <span class="pill">PHP</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">Git</span>
+          <span class="pill">Java</span>
+          <span class="pill">Linux</span>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="hero-cta">
+          <a href="#contacto" class="btn btn-primary">Contáctame</a>
+          <a href="#experiencia" class="btn btn-ghost">Ver Experiencia</a>
+        </div>
       </div>
     </header>
 
     <main>
+      <!-- SECCIÓN: SOBRE MÍ -->
       <section id="sobre-mi">
         <div class="container">
           <div class="section-content">
             <h3 class="section-title">Sobre Mí</h3>
-            <p class="section-text">
-              Aquí puedes hablar sobre ti, tus habilidades, tu experiencia y lo
-              que te apasiona. Esta sección es perfecta para que los visitantes
-              te conozcan mejor.
-            </p>
+
+            <div class="about-grid">
+              <!-- Columna izquierda: avatar + bio -->
+              <div>
+                <img class="about-avatar" src="assets/avatar.jpeg"></img>
+                <div class="about-name">Oscar Martin Morales</div>
+                <div class="about-role">
+                  Desarrollador Web Junior · Full Stack
+                </div>
+                <p class="section-text" style="font-size: 1rem">
+                  Soy un desarrollador web junior con formación sólida en
+                  desarrollo full stack, sistemas y redes. Me apasiona construir
+                  aplicaciones web modernas, aplicar buenas prácticas de
+                  accesibilidad (WCAG) y trabajar en equipo para resolver
+                  problemas técnicos reales.
+                </p>
+                <br />
+                <p class="section-text" style="font-size: 1rem">
+                  He completado prácticas en una empresa de desarrollo web donde
+                  trabajé con TypeScript, Git y entornos colaborativos,
+                  participando en el ciclo completo de desarrollo: análisis,
+                  implementación, revisión de código y optimización.
+                </p>
+              </div>
+
+              <!-- Columna derecha: skills agrupadas -->
+              <div class="skills-block">
+                <h4>Frontend</h4>
+                <div class="skills-grid">
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">TypeScript</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Responsive Design</span>
+                  <span class="skill-tag">Accesibilidad WCAG</span>
+                </div>
+
+                <h4>Backend &amp; Bases de Datos</h4>
+                <div class="skills-grid">
+                  <span class="skill-tag secondary">PHP</span>
+                  <span class="skill-tag secondary">Java</span>
+                  <span class="skill-tag secondary">MySQL</span>
+                  <span class="skill-tag secondary">SQL Server</span>
+                  <span class="skill-tag secondary">APIs REST</span>
+                  <span class="skill-tag secondary">Python</span>
+                </div>
+
+                <h4>Sistemas &amp; Herramientas</h4>
+                <div class="skills-grid">
+                  <span class="skill-tag">Git</span>
+                  <span class="skill-tag">Linux</span>
+                  <span class="skill-tag">Apache</span>
+                  <span class="skill-tag">DHCP / DNS</span>
+                  <span class="skill-tag">Redes LAN/WLAN</span>
+                  <span class="skill-tag">MikroTik</span>
+                </div>
+              </div>
+            </div>
+            <!-- /about-grid -->
           </div>
         </div>
       </section>
 
+      <!-- ==========================================================
+         SECCIÓN: PROYECTOS
+         Tarjetas de proyectos. Cada tarjeta puede tener:
+           - Link a GitHub (repo)
+           - Link a producción (web en vivo)
+           - O ambos a la vez
+
+         ── CÓMO AÑADIR UN PROYECTO ──
+         Copia el bloque <article class="project-card"> de la plantilla
+         comentada al final de esta sección, pégalo dentro del
+         <div class="projects-grid"> y rellena los campos.
+    ========================================================== -->
       <section id="proyectos">
         <div class="container">
           <div class="section-content">
             <h3 class="section-title">Proyectos</h3>
-            <p class="section-text">
-              Muestra tus mejores trabajos y proyectos. Puedes añadir imágenes,
-              descripciones y enlaces a cada proyecto.
+            <p class="section-text" style="margin-bottom: 48px">
+              Una selección de proyectos personales y académicos. Cada uno
+              incluye enlace al repositorio en GitHub y/o a la demo en
+              producción.
             </p>
+
+            <div class="projects-grid">
+              <!-- ── PROYECTO 1: tiene GitHub + web en producción ── -->
+              <article class="project-card" data-tags="React,TypeScript,CSS">
+                <div class="proj-header">
+                  <span class="proj-icon">🌐</span>
+                  <div class="proj-badges">
+                    <span class="proj-badge live">En producción</span>
+                  </div>
+                </div>
+                <h4 class="proj-title">Nombre del Proyecto</h4>
+                <p class="proj-desc">
+                  Descripción breve del proyecto: qué hace, para qué sirve y qué
+                  problema resuelve. Puedes escribir 2-3 frases.
+                </p>
+                <div class="proj-tags">
+                  <span>React</span><span>TypeScript</span><span>CSS</span>
+                </div>
+                <div class="proj-links">
+                  <a
+                    href="https://github.com/tu-usuario/nombre-repo"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-btn proj-btn-github"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://tu-web.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-btn proj-btn-live"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+                      />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                    Ver web
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── PROYECTO 2: solo GitHub, sin web en producción ── -->
+              <article class="project-card" data-tags="PHP,MySQL,HTML">
+                <div class="proj-header">
+                  <span class="proj-icon">🛠️</span>
+                  <div class="proj-badges"></div>
+                </div>
+                <h4 class="proj-title">Otro Proyecto</h4>
+                <p class="proj-desc">
+                  Descripción breve del proyecto. Explica qué tecnologías usaste
+                  y qué aprendiste haciéndolo.
+                </p>
+                <div class="proj-tags">
+                  <span>PHP</span><span>MySQL</span><span>HTML</span>
+                </div>
+                <div class="proj-links">
+                  <a
+                    href="https://github.com/tu-usuario/nombre-repo"
+                    target="_blank"
+                    rel="noopener"
+                    class="proj-btn proj-btn-github"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                      />
+                    </svg>
+                    GitHub
+                  </a>
+                  <!-- Sin botón "Ver web" → el proyecto no está desplegado -->
+                </div>
+              </article>
+
+              <!--
+            ══════════════════════════════════════════
+            PLANTILLA PARA AÑADIR UN NUEVO PROYECTO
+            Descomenta y rellena este bloque:
+            ══════════════════════════════════════════
+
+            <article class="project-card" data-tags="Tech1,Tech2,Tech3">
+              <div class="proj-header">
+                <span class="proj-icon">🚀</span>
+                <div class="proj-badges">
+                  <span class="proj-badge live">En producción</span>
+                </div>
+              </div>
+              <h4 class="proj-title">Nombre del Proyecto</h4>
+              <p class="proj-desc">Descripción del proyecto.</p>
+              <div class="proj-tags">
+                <span>Tech1</span><span>Tech2</span><span>Tech3</span>
+              </div>
+              <div class="proj-links">
+                <a href="URL_REPO_GITHUB" target="_blank" rel="noopener" class="proj-btn proj-btn-github">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                  GitHub
+                </a>
+                <a href="URL_WEB_PRODUCCION" target="_blank" rel="noopener" class="proj-btn proj-btn-live">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Ver web
+                </a>
+              </div>
+            </article>
+            --></div>
+            <!-- /projects-grid -->
           </div>
         </div>
       </section>
 
+      <!-- SECCIÓN: TRAYECTORIA -->
+      <section id="experiencia">
+        <div class="container">
+          <div class="section-content">
+            <h3 class="section-title">Trayectoria</h3>
+
+            <!-- Selector de pestañas -->
+            <div class="exp-tabs">
+              <button class="exp-tab active" onclick="switchTab(event, 'exp')">
+                💼 Experiencia
+              </button>
+              <button class="exp-tab" onclick="switchTab(event, 'edu')">
+                🎓 Educación
+              </button>
+              <button class="exp-tab" onclick="switchTab(event, 'cert')">
+                🏅 Certificaciones
+              </button>
+            </div>
+
+            <!-- ── PESTAÑA: EXPERIENCIA LABORAL ── -->
+            <div class="tab-panel active" id="tab-exp">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title">Desarrollador Web</span>
+                    <span class="tl-date"
+                      >jun. 2025 – sept. 2025 · 4 meses</span
+                    >
+                  </div>
+                  <div class="tl-company">Iskra Desenvolupament</div>
+                  <div class="tl-location">
+                    📍 Manresa, Cataluña · Híbrido · Prácticas
+                  </div>
+                  <p class="tl-desc">
+                    Desarrollé y mantuve una aplicación web corporativa con
+                    tecnologías modernas de frontend y backend, aplicando buenas
+                    prácticas de programación y accesibilidad (WCAG). Participé
+                    en la resolución de incidencias, corrección de errores y
+                    mejora de funcionalidades. Colaboré en revisión de código,
+                    seguridad y optimización del rendimiento.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title">Mozo de Almacén</span>
+                    <span class="tl-date"
+                      >jul. 2024 – sept. 2024 · 3 meses</span
+                    >
+                  </div>
+                  <div class="tl-company">TEXPOL</div>
+                  <div class="tl-location">
+                    📍 Manresa, Cataluña · Presencial · Temporal
+                  </div>
+                  <p class="tl-desc">
+                    Gestión de inventario, recepción y preparación de pedidos,
+                    coordinación de entradas y salidas de mercancías. Resolución
+                    de incidencias logísticas y apoyo al equipo para cumplir
+                    tiempos de entrega.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title">Operario de Producción</span>
+                    <span class="tl-date"
+                      >may. 2023 – sept. 2023 · 5 meses</span
+                    >
+                  </div>
+                  <div class="tl-company">Audens Food</div>
+                  <div class="tl-location">
+                    📍 Balsareny · Presencial · Temporal
+                  </div>
+                  <p class="tl-desc">
+                    Cadena de producción alimentaria, control de procesos y
+                    aseguramiento de calidad del producto. Coordinación con el
+                    equipo para cumplir objetivos de producción y plazos.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title">IT Support Technician</span>
+                    <span class="tl-date"
+                      >sept. 2022 – dic. 2022 · 4 meses</span
+                    >
+                  </div>
+                  <div class="tl-company">
+                    SERVITEC INFORMÀTICA I TECNOLOGIES SL
+                  </div>
+                  <div class="tl-location">
+                    📍 Manresa, Cataluña · Presencial · Prácticas
+                  </div>
+                  <p class="tl-desc">
+                    Reparaciones y mantenimiento de equipos informáticos
+                    (hardware y software). Resolución de incidencias, atención y
+                    asesoramiento técnico a clientes.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title">Dependiente</span>
+                    <span class="tl-date"
+                      >jul. 2022 – sept. 2022 · 3 meses</span
+                    >
+                  </div>
+                  <div class="tl-company">Mes per Menys</div>
+                  <div class="tl-location">
+                    📍 Sant Joan de Vilatorrada · Presencial · Prácticas
+                  </div>
+                  <p class="tl-desc">
+                    Atención al cliente, venta de productos y aseguramiento de
+                    la calidad en el servicio. Resolución de incidencias y
+                    soporte en la gestión diaria de la tienda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /tab-exp -->
+
+            <!-- ── PESTAÑA: EDUCACIÓN ── -->
+            <div class="tab-panel" id="tab-edu">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title"
+                      >CFGS – Desarrollo de Aplicaciones Web (DAW)</span
+                    >
+                    <span class="tl-date">sept. 2023 – may. 2025</span>
+                  </div>
+                  <div class="tl-company">Lacetania · Manresa</div>
+                  <div class="tl-location">
+                    🎓 Formación Profesional de Grado Superior
+                  </div>
+                  <p class="tl-desc">
+                    HTML, CSS, JavaScript y frameworks de frontend con diseño
+                    responsive, usabilidad y accesibilidad. Backend con PHP,
+                    Java, desarrollo de APIs, gestión de sesiones y
+                    autenticación. Bases de datos con MySQL y SQL Server:
+                    diseño, consultas y normalización. Control de versiones con
+                    Git, programación orientada a objetos y patrones de diseño.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="tl-header">
+                    <span class="tl-title"
+                      >CFGM – Sistemas Microinformáticos y Redes (SMR)</span
+                    >
+                    <span class="tl-date">sept. 2021 – may. 2023</span>
+                  </div>
+                  <div class="tl-company">Lacetania · Manresa</div>
+                  <div class="tl-location">
+                    🎓 Ciclo Formativo de Grado Medio
+                  </div>
+                  <p class="tl-desc">
+                    Instalación, configuración y mantenimiento de hardware y
+                    software. Administración de Windows y Linux: usuarios,
+                    permisos y servicios. Redes LAN/WLAN, routing, switching,
+                    DHCP, DNS, FTP y Apache. Seguridad informática y copias de
+                    seguridad. Fundamentos de programación con Python.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- /tab-edu -->
+
+            <!-- ── PESTAÑA: CERTIFICACIONES ── -->
+            <div class="tab-panel" id="tab-cert">
+              <div class="cert-card">
+                <div class="cert-icon">🔴</div>
+                <div>
+                  <div class="cert-title">
+                    MikroTik Certified Network Associate (MTCNA)
+                  </div>
+                  <div class="cert-issuer">MikroTik</div>
+                  <div class="cert-meta">
+                    📅 Expedición: jun. 2022 · Vencimiento: jun. 2025 · ID:
+                    2206NA6247
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /tab-cert -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: CONTACTO -->
       <section id="contacto">
         <div class="container">
           <div class="section-content">
             <h3 class="section-title">Contacto</h3>
-            <p class="section-text">
-              Añade tus datos de contacto, redes sociales o un formulario para
-              que puedan comunicarse contigo.
-            </p>
+
+            <div class="contact-grid">
+              <!-- Texto + botón email -->
+              <div class="contact-info">
+                <p>
+                  ¿Tienes un proyecto interesante o quieres que hablemos? Estoy
+                  abierto a nuevas oportunidades y colaboraciones. No dudes en
+                  escribirme.
+                </p>
+                <a
+                  href="mailto:tu@email.com"
+                  class="btn btn-primary"
+                  style="display: inline-block"
+                  >✉️ Enviar email</a
+                >
+              </div>
+
+              <!-- Links de redes -->
+              <div class="contact-links">
+                <a
+                  href="https://linkedin.com/in/TU-PERFIL"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-link"
+                >
+                  <div
+                    class="contact-link-icon"
+                    style="
+                      background: linear-gradient(135deg, #0077b5, #005fa3);
+                      color: white;
+                      font-weight: 700;
+                      font-size: 1rem;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    in
+                  </div>
+                  <div>
+                    <div class="contact-link-label">LinkedIn</div>
+                    <div class="contact-link-value">Oscar Martin Morales</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/TU-USUARIO"
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-link"
+                >
+                  <div
+                    class="contact-link-icon"
+                    style="
+                      background: linear-gradient(135deg, #24292e, #404448);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
+                      <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="contact-link-label">GitHub</div>
+                    <div class="contact-link-value">github.com/TU-USUARIO</div>
+                  </div>
+                </a>
+              </div>
+              <!-- /contact-links -->
+            </div>
+            <!-- /contact-grid -->
           </div>
         </div>
       </section>
     </main>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
-      <p>&copy; 2025 Mi Portfolio. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Oscar Martin Morales · Desarrollador Web Junior</p>
     </footer>
 
+    <!-- Script principal -->
     <script src="script.js"></script>
   </body>
 </html>
